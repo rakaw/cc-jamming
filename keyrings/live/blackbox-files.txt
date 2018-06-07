@@ -1,2 +1,1 @@
-Volumes/SSHD/SSD_Files/Documents/Documents_Raka/Code_Git/cc-jamming/NOTES.md
 Volumes/SSHD/SSD_Files/Documents/Documents_Raka/Code_Git/cc-jamming/src/util/Secret.js
