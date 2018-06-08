@@ -26,6 +26,3 @@ yarn-error.log*
 /keyrings/live/pubring.gpg~
 /keyrings/live/pubring.kbx~
 /keyrings/live/secring.gpg
-/d/Code/JS/cc-jamming/NOTES.md
-/d/Code/JS/cc-jamming/src/util/Secret.js
-/NOTES.md
