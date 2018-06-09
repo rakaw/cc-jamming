@@ -32,8 +32,9 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div>
-        {this.state}
+      <div className="SearchBar">
+        <input placeholder="Enter a song title" />
+        <a>SEARCH</a>
       </div>
     )
   }
