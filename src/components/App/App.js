@@ -11,7 +11,20 @@ class App extends Component {
     super(props);
 
     this.state = {
-      songs: []
+      searchResults: [
+        {
+          name: 'name1',
+          artist: 'artist1',
+          album: 'album1',
+          id: '1'
+        },
+        {
+          name: 'name2',
+          artist: 'artist2',
+          album: 'album2',
+          id: '2'
+        }
+      ]
     }
 
     //bindings
@@ -31,7 +44,7 @@ class App extends Component {
         <div className="App">
           <SearchBar />
           <div className="App-playlist">
-            <SearchResults />
+            <SearchResults searchResults={this.state.searchResults}/>
             <Playlist />
           </div>
         </div>
