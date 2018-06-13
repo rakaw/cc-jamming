@@ -1,4 +1,4 @@
-import { clientID, clientSecret} from './Secret.js.gpg';
+//import { clientID, clientSecret} from './Secret.js.gpg';
 import React from 'react';
 
 class Spotify extends React.Component {

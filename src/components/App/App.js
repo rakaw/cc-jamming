@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import SearchBar from '../SearchBar/SearchBar';
 import Playlist from '../Playlist/Playlist';
-import SearchResults from '../SearchResults/SearchResults'
+import SearchResults from '../SearchResults/SearchResults';
 import Spotify from '../../util/Spotify';
 
 
@@ -20,7 +20,7 @@ class App extends Component {
         {name: 'pname2', artist: 'partist2', album: 'palbum2', id: 5}
       ],
       playlistName: 'Playlist Name Here'
-    }
+    };
 
     //bindings
     this.searchSpotify = this.searchSpotify.bind(this);
