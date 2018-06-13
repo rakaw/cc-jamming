@@ -35,7 +35,7 @@ class SearchBar extends React.Component {
     return (
       <div className="SearchBar">
         <input placeholder="Enter a Song, Album, or Artist" />
-        <TrackList tracks={this.props.playlistTracks} />
+        {/*<TrackList tracks={this.props.playlistTracks} />*/}
         <a>SEARCH</a>
       </div>
     )
