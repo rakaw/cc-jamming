@@ -3,7 +3,7 @@ import './App.css';
 import SearchBar from '../SearchBar/SearchBar';
 import Playlist from '../Playlist/Playlist';
 import SearchResults from '../SearchResults/SearchResults';
-import Spotify from '../../util/Spotify';
+//import Spotify from '../../util/Spotify';
 
 
 class App extends Component {
@@ -23,16 +23,18 @@ class App extends Component {
     };
 
     //bindings
-    this.searchSpotify = this.searchSpotify.bind(this);
+    //this.searchSpotify = this.searchSpotify.bind(this);
     this.addTrack = this.addTrack.bind(this);
   }
 
   //Simulate the "let's go" button
+  /*
   searchSpotify(q, type) {
     Spotify.search(q, type).then(songs => {
       this.setState({songs: songs});
     })
   }
+  */
 
   addTrack(track) {
     const tracks = this.state.playlistTracks;
@@ -45,8 +47,6 @@ class App extends Component {
   }
 
   render() {
-    console.log('App.js searchResults');
-    console.log(this.state.searchResults);
     return (
       <div>
         <h1>Ja<span className="highlight">mmm</span>ing</h1>

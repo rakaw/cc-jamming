@@ -1,35 +1,8 @@
 import React from 'react';
 import './SearchBar.css';
-import TrackList from '../TrackList/TrackList';
+//import TrackList from '../TrackList/TrackList';
 
 class SearchBar extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      q: '',
-      type: 'album'
-    }
-    //Bindings
-    this.handleQChange = this.handleQChange.bind(this);
-    this.handleTypeChange = this.handleTypeChange.bind(this);
-    this.handleSearch = this.handleSearch.bind(this);
-
-    //this.state.type options
-    this.typeOptions = ['album', 'artist', 'playlist', 'track']
-  }
-
-  //methods: handles state changes
-  handleQChange(e) {
-    this.setState({q: e.target.value});
-  }
-  handleTypeChange(e) {
-    this.setState({type: e.target.value});
-  }
-  handleSearch(e) {
-    this.props.searchSpotify(this.state.q, this.state.type);
-    e.preventDefault();
-  }
 
   render() {
     return (
