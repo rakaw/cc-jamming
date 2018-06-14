@@ -3,7 +3,7 @@ import './App.css';
 import SearchBar from '../SearchBar/SearchBar';
 import Playlist from '../Playlist/Playlist';
 import SearchResults from '../SearchResults/SearchResults';
-//import Spotify from '../../util/Spotify';
+import Spotify from '../../util/Spotify';
 
 
 class App extends Component {
@@ -16,8 +16,8 @@ class App extends Component {
         {name: 'name2', artist: 'artist2', album: 'album2', id: 2}
       ],
       playlistTracks: [
-        {name: 'pname1', artist: 'partist1', album: 'palbum1', id: 4},
-        {name: 'pname2', artist: 'partist2', album: 'palbum2', id: 5}
+        {name: 'pname1', artist: 'partist1', album: 'palbum1', id: 4, uri: 'track4-uri'},
+        {name: 'pname2', artist: 'partist2', album: 'palbum2', id: 5, uri: 'track5-uri'}
       ],
       playlistName: 'Playlist Name Here'
     };
@@ -26,6 +26,9 @@ class App extends Component {
     //this.searchSpotify = this.searchSpotify.bind(this);
     this.addTrack = this.addTrack.bind(this);
     this.removeTrack = this.removeTrack.bind(this);
+    this.updatePlaylistName = this.updatePlaylistName.bind(this);
+    this.savePlaylist = this.savePlaylist.bind(this);
+    this.search = this.search.bind(this);
   }
 
   //Simulate the "let's go" button
@@ -54,18 +57,40 @@ class App extends Component {
     this.setState({ playlistTracks: filteredTracks });
   }
 
+  updatePlaylistName(name) {
+    this.setState({ playlistName: name });
+  }
+
+  // Make an array of uri to send request to Spotify
+  savePlaylist() {
+    const playlistTracks = this.state.playlistTracks;
+    const trackURIs = playlistTracks.map(currTrack => currTrack.uri);
+    //console.log(trackURIs);
+  }
+
+  search(term) {
+    Spotify.search(term).then(tracks => {
+      this.setState({ searchResults: tracks });
+    })
+  }
+
   render() {
     return (
       <div>
         <h1>Ja<span className="highlight">mmm</span>ing</h1>
         <div className="App">
-          <SearchBar />
+          <SearchBar onSearch={this.search} />
           <div className="App-playlist">
-            <SearchResults searchResults={this.state.searchResults} addTrack={this.addTrack} />
+            <SearchResults
+              searchResults={this.state.searchResults}
+              addTrack={this.addTrack}
+            />
             <Playlist
               playlistName={this.state.playlistName}
               playlistTracks={this.state.playlistTracks}
-              onRemove={this.removeTrack} />
+              onRemove={this.removeTrack}
+              onNameChange={this.updatePlaylistName}
+              onSave={this.savePlaylist} />
           </div>
         </div>
       </div>
