@@ -25,6 +25,7 @@ class App extends Component {
     //bindings
     //this.searchSpotify = this.searchSpotify.bind(this);
     this.addTrack = this.addTrack.bind(this);
+    this.removeTrack = this.removeTrack.bind(this);
   }
 
   //Simulate the "let's go" button
@@ -46,6 +47,13 @@ class App extends Component {
     }
   }
 
+  removeTrack(track) {
+    const tracks = this.state.playlistTracks;
+    const filteredTracks = tracks.filter(currrTrack => currrTrack.id !== track.id);
+
+    this.setState({ playlistTracks: filteredTracks });
+  }
+
   render() {
     return (
       <div>
@@ -56,7 +64,8 @@ class App extends Component {
             <SearchResults searchResults={this.state.searchResults} addTrack={this.addTrack} />
             <Playlist
               playlistName={this.state.playlistName}
-              playlistTracks={this.state.playlistTracks} />
+              playlistTracks={this.state.playlistTracks}
+              onRemove={this.removeTrack} />
           </div>
         </div>
       </div>
