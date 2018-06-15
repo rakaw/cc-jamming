@@ -31,15 +31,6 @@ class App extends Component {
     this.search = this.search.bind(this);
   }
 
-  //Simulate the "let's go" button
-  /*
-  searchSpotify(q, type) {
-    Spotify.search(q, type).then(songs => {
-      this.setState({songs: songs});
-    })
-  }
-  */
-
   addTrack(track) {
     const tracks = this.state.playlistTracks;
     const output = tracks.find(currrTrack => currrTrack.id === track.id);
@@ -71,7 +62,7 @@ class App extends Component {
   search(term) {
     Spotify.search(term).then(tracks => {
       this.setState({ searchResults: tracks });
-    })
+    });
   }
 
   render() {
