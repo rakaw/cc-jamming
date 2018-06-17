@@ -40,10 +40,9 @@ const Spotify = {
       headers: {
         Authorization: `Bearer ${accessToken}`
       }
-    }).then(response => {
-      console.log(response); //DELETE THIS AFTERLADKFJAIEJFLSAIEJFLAISEJF
-      return response.json();
-    }).then(jsonResponse => {
+    })
+    .then(response => response.json())
+    .then(jsonResponse => {
       if(!jsonResponse.tracks) {
         return [];
       }
@@ -57,6 +56,46 @@ const Spotify = {
           uri: track.uri
         };
       })
+    });
+  },
+
+  savePlaylist(playlistName, trackURI) {
+    //no tracks, return nothing
+    if(!playlistName || !trackURI) {
+      return;
+    }
+
+    const accessToken = this.getAccessToken();
+    //get user ID
+    return fetch('https://api.spotify.com/v1/me', {
+      headers: {
+        Authorization: `Bearer ${accessToken}`
+      }
+    })
+    .then(response => response.json())
+    .then(jsonResponse => jsonResponse.id)
+    .then(userID => {
+      //create a playlist in spotify account with user ID
+      fetch(`https://api.spotify.com/v1/users/${userID}/playlists`, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`
+        },
+        body: JSON.stringify({ name: playlistName }),
+        method: 'POST'
+      })
+        .then(response => response.json())
+        .then(jsonResponse => {
+          const playlistID = jsonResponse.id;
+          // use user ID & playlist ID to add songs to account
+          const addSongsUrl = `https://api.spotify.com/v1/users/${userID}/playlists/${playlistID}/tracks`;
+          fetch(addSongsUrl, {
+            headers: {
+              Authorization: `Bearer ${accessToken}`
+            },
+            body: JSON.stringify({ uris: trackURI }),
+            method: 'POST'
+          });
+        });
     });
   }
 };
