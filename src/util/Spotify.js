@@ -3,7 +3,7 @@ import { clientID } from './Secret';
 
 // variables for link
 let userAccessToken = '';
-const redirectURI = 'https://letsjam.surge.sh';
+const redirectURI = 'https://letsjam.surge.sh/';
   //local: 'http://localhost:3000'
 
 

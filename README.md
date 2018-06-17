@@ -1,5 +1,9 @@
 https://letsjam.surge.sh
 
+# JAMMING
+A react.js project that uses the Spotify API to search and create playlists for your spotify account. Visit the link above to head to the website
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
