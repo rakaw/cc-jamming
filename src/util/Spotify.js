@@ -3,7 +3,8 @@ import { clientID } from './Secret';
 
 // variables for link
 let userAccessToken = '';
-const redirectURI = 'http://localhost:3000';
+const redirectURI = 'https://letsjam.surge.sh';
+  //local: 'http://localhost:3000'
 
 
 const Spotify = {
