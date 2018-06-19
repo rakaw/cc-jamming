@@ -28,3 +28,13 @@ yarn-error.log*
 /keyrings/live/pubring.gpg~
 /keyrings/live/pubring.kbx~
 /keyrings/live/secring.gpg
+
+# Windows
+/keyrings/live/S.gpg-agent
+/keyrings/live/S.gpg-agent.browser
+/keyrings/live/S.gpg-agent.extra
+/keyrings/live/S.gpg-agent.ssh
+/keyrings/live/gnupg_spawn_agent_sentinel.lock
+/keyrings/live/pubring.kb_
+/keyrings/live/pubring.kbx.lock
+/keyrings/live/trustdb.gpg.lock
