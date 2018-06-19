@@ -4,6 +4,7 @@ import SearchBar from '../SearchBar/SearchBar';
 import Playlist from '../Playlist/Playlist';
 import SearchResults from '../SearchResults/SearchResults';
 import Spotify from '../../util/Spotify';
+import SpotifyStatus from '../SpotifyStatus/SpotifyStatus';
 
 
 class App extends Component {
@@ -64,7 +65,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>Ja<span className="highlight">mmm</span>ing</h1>
+        <div>
+          <h1>Ja<span className="highlight">mmm</span>ing</h1>
+          <h1 className="login"><SpotifyStatus /></h1>
+        </div>
         <div className="App">
           <SearchBar onSearch={this.search} />
           <div className="App-playlist">
