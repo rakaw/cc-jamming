@@ -1,5 +1,6 @@
 import React from 'react';
 import Spotify from '../../util/Spotify';
+import './SpotifyStatus.css';
 
 class SpotifyStatus extends React.Component {
   constructor(props) {
@@ -39,9 +40,9 @@ class SpotifyStatus extends React.Component {
     return (
       <div>
         {this.renderState()}
-        <ul>
+        <ul className="spotify-buttons">
           <input
-            className="login"
+            className="login-button"
             type="button"
             value={this.state.login}
             onClick={this.handleLogin} />
@@ -57,12 +58,3 @@ class SpotifyStatus extends React.Component {
 };
 
 export default SpotifyStatus;
-
-/*
-<a
-  className="redirect-playlist"
-  type="button"
-  onClick={this.handleAccount}
-  value="Go to playlists"
->
-*/

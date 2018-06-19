@@ -65,7 +65,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div>
+        <div className="header">
           <h1>Ja<span className="highlight">mmm</span>ing</h1>
           <h1 className="login"><SpotifyStatus /></h1>
         </div>

@@ -23,7 +23,7 @@ h1 .highlight {
 
 /* for login button */
 h1 .login {
-  
+  display: inline;
 }
 
 h2 {
