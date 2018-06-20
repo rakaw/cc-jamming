@@ -1,7 +1,18 @@
 
-
 .spotify-buttons {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+}
+
+.spotify-buttons a {
+  font-size: 12px;
+  display: flex;
+  cursor: pointer;
+  width: 6.5rem;
+  padding: 0.33rem 0;
+  background-color: #6c41ec;
+  text-align: center;
+  border-radius: 54px;
+
 }

@@ -7,7 +7,7 @@ class SpotifyStatus extends React.Component {
     super(props);
 
     this.state = {
-      login: ''
+      login: 'Sign in to Spotify'
     };
 
     //bindings
@@ -16,8 +16,11 @@ class SpotifyStatus extends React.Component {
   }
 
   renderState() {
-    if (this.state.login === '') {
-      return this.setState({ login: 'Sign in to Spotify' })
+    const url = window.location.href;
+    const loggedIn = url.match(/access_token=([^&]*)/);
+    if (!loggedIn) {
+      this.setState({ login: 'Sign in to Spotify' });
+      return;
     }
   }
 
@@ -39,18 +42,20 @@ class SpotifyStatus extends React.Component {
   render() {
     return (
       <div>
-        {this.renderState()}
+        {this.renderState}
         <ul className="spotify-buttons">
-          <input
+          <a
             className="login-button"
-            type="button"
-            value={this.state.login}
-            onClick={this.handleLogin} />
-          <input
+            onClick={this.handleLogin}
+            >
+            {this.state.login}
+          </a>
+          <a
             className="redirect-playlist"
-            type="button"
             onClick={this.handleAccount}
-            value="Go to playlists" />
+            >
+            Go to playlists
+          </a>
         </ul>
       </div>
     );
