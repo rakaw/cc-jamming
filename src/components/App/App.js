@@ -67,7 +67,9 @@ class App extends Component {
       <div>
         <div className="header">
           <h1>Ja<span className="highlight">mmm</span>ing</h1>
-          <h1 className="login"><SpotifyStatus /></h1>
+          <div className="header-right">
+            <SpotifyStatus />
+          </div>
         </div>
         <div className="App">
           <SearchBar onSearch={this.search} />

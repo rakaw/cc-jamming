@@ -43,20 +43,14 @@ class SpotifyStatus extends React.Component {
     return (
       <div>
         {this.renderState}
-        <ul className="spotify-buttons">
-          <a
-            className="login-button"
-            onClick={this.handleLogin}
-          >
+        <div className="spotify-buttons">
+          <a className="login-button" onClick={this.handleLogin} >
             {this.state.login}
           </a>
-          <a
-            className="redirect-playlist"
-            onClick={this.handleAccount}
-          >
+          <a className="redirect-playlist" onClick={this.handleAccount} >
             Go to playlists
           </a>
-        </ul>
+        </div>
       </div>
     );
   }
