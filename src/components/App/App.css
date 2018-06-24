@@ -37,7 +37,7 @@ h2 {
 
 .header {
   overflow: hidden;
-  padding: .77rem .77rem;
+  padding: 12px;
   background-color: #010c3f;
   font-family: 'Poppins', sans-serif;
   font-size: 1.88rem;
@@ -47,12 +47,11 @@ h2 {
 .header h1 {
   float: left;
   cursor: pointer;
+  color: white;
 }
 
 .header-right {
   float: right;
-  font-size: 1rem;
-  cursor: pointer;
 }
 
 @media only screen and (max-width: 1020px) {

@@ -76,8 +76,7 @@ class App extends Component {
           <div className="App-playlist">
             <SearchResults
               searchResults={this.state.searchResults}
-              addTrack={this.addTrack}
-            />
+              addTrack={this.addTrack} />
             <Playlist
               playlistName={this.state.playlistName}
               playlistTracks={this.state.playlistTracks}

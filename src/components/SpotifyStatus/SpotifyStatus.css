@@ -1,5 +1,5 @@
 
-/*
+
 .spotify-buttons {
     display: flex;
     justify-content: flex-end;
@@ -11,9 +11,11 @@
   display: block;
   cursor: pointer;
   width: 6.5rem;
-  padding: 0.33rem 0rem;
+  padding: 0.33rem;
+  margin: 0.33rem;
   background-color: #6c41ec;
   text-align: center;
   border-radius: 54px;
+  color: white;
+  text-decoration: none;
 }
-*/
