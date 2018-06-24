@@ -21,6 +21,8 @@ class SpotifyStatus extends React.Component {
     if (!loggedIn) {
       Spotify.getAccessToken();
       this.setState({ login: 'Sign out on spotify.com' })
+    } else if (this.state.login === 'Sign out on spotify.com') {
+      window.location.href = 'https://www.spotify.com/login';
     } else {
       this.setState({ login: 'Sign out on spotify.com '})
     }
