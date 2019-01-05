@@ -12,21 +12,6 @@ class SpotifyStatus extends React.Component {
 
     //bindings
     this.handleLogin = this.handleLogin.bind(this);
-    this.handleAccount = this.handleAccount.bind(this);
-    this.renderState = this.renderState.bind(this);
-  }
-
-  renderState() {
-    const url = window.location.href;
-    const loggedIn = url.match(/access_token=([^&]*)/);
-    if (loggedIn) {
-      this.setState({ login: 'Sign out of Spotify' });
-    }
-  }
-
-  handleAccount(event) {
-    event.preventDefault();
-    return window.location.href='https://open.spotify.com/collection/playlists';
   }
 
   handleLogin(event) {
@@ -36,27 +21,26 @@ class SpotifyStatus extends React.Component {
     if (!loggedIn) {
       Spotify.getAccessToken();
       this.setState({ login: 'Sign out on spotify.com' })
+    } else if (this.state.login === 'Sign out on spotify.com') {
+      window.location.href = 'https://www.spotify.com/login';
+    } else {
+      this.setState({ login: 'Sign out on spotify.com '})
     }
   }
 
   render() {
     return (
       <div>
-        {this.renderState}
-        <ul className="spotify-buttons">
-          <a
-            className="login-button"
-            onClick={this.handleLogin}
-          >
+        <div className="spotify-buttons">
+          <a className="login-button" onClick={this.handleLogin} >
             {this.state.login}
           </a>
           <a
             className="redirect-playlist"
-            onClick={this.handleAccount}
-          >
+            href="https://open.spotify.com/collection/playlists" >
             Go to playlists
           </a>
-        </ul>
+        </div>
       </div>
     );
   }
