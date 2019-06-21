@@ -1,36 +1,10 @@
 {
-<<<<<<< HEAD
-  "name": "cc-minesweeper",
-  "version": "1.0.0",
-  "description": "A game of Minesweeper played through the command line",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src -d lib"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rakaw/cc-minesweeper.git"
-  },
-  "author": "Raka Wiradinata",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/rakaw/cc-minesweeper/issues"
-  },
-  "homepage": "https://github.com/rakaw/cc-minesweeper#readme",
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0"
-  },
-  "dependencies": {
-    "braces": "^3.0.2"
-=======
   "name": "cc-jamming",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-scripts": "^3.0.1"
   },
   "scripts": {
@@ -38,6 +12,5 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
->>>>>>> 0f46bb48a1a5e6d5c7bc8c3ad5ef41e2d653b040
   }
 }
