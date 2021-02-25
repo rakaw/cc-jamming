@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "braces": "^1.8.5",
+    "braces": "^3.0.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-scripts": "^2.0.5"
+    "react-scripts": "^4.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
